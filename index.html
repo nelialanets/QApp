@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer"/>
+     <link rel ='stylesheet' href="main.css"/>
+     <title>Quiz App</title>
+    
+</head>
+<body>
+     <div class="wrapper">
+          <div class="quiz-container">
+               <div class="quiz-head">
+                    <h1 class=" quiz-title">Quiz Game </h1>
+                    <div class="quiz-score flex">
+                         <span id="correct-score"></span>/<span id="total-question"></span>
+                    </div>
+               </div>
+               <div class="quiz-body">
+                    <h2 class="quiz-questions" id ='question'> <br>
+                    <span class="category"></span> </h2>
+                    <ul class="quiz-options">
+                         <li>1. </li>
+                         <li>2</li>
+                         <li>3</li>
+                         <li>4</li>
+                         <li>5</li>
+                    </ul>
+                    <div id ='result'>
+                         <!--result here-->
+                    </div>
+               </div>
+               <div class ='quiz-foot'>
+                    <button type="button" id ='check-answer'>Check unswer </button>
+                    <button type="button" id ='play-again'>Play Again </button>
+               </div>
+          </div>
+
+     </div>
+     <!-- quiz script -->
+     <script src = "index.js"></script>
+</body>
+</html>
