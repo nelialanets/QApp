@@ -1,10 +1,9 @@
 //https://opentdb.com/api.php?amount=10
+//https://opentdb.com/api.php?amount=10&category=18&type=boolean
 
 
  const question = document.getElementById('question');
  const options = document.querySelector('.quiz-options');
- const _correctScore = document.getElementById('correct-score');
- const _totalQuestion = document.getElementById('total-question');
  const checkBtn= document.getElementById('check-answer');
  const _playAgainBtn = document.getElementById('play-again');
  const _result = document.getElementById('result');
@@ -21,13 +20,10 @@
  document.addEventListener('DOMContentLoaded', ()=>{
      loadQuestions();
      eventListeners();
-     _totalQuestion.textContent = totalQuestion;
-     _correctScore.textContent = correctScore;
-
  })
 
 async function loadQuestions(){
-     const APIUrl='https://opentdb.com/api.php?amount=1'
+     const APIUrl='https://opentdb.com/api.php?amount=10&category=18&type=boolean'
      const result = await fetch(`${APIUrl}`);
      const data = await result.json();
 
@@ -36,7 +32,7 @@ async function loadQuestions(){
 }
 //display questions and options
 function showQuestions(data){
-      correctAnswer = data.correct_answer;
+     correctAnswer = data.correct_answer;
      let incorrectAnswer = data.incorrect_answers;
      let optionsList = incorrectAnswer;
      optionsList.splice(Math.floor(Math.random()
@@ -47,8 +43,8 @@ function showQuestions(data){
      question.innerHTML=`${data.question} <br> <span class = 
      "category">${data.category}</span>`;
      options.innerHTML = `
-     ${optionsList.map((option, index)=>`
-     <li> ${index +1}. <span>${option}</span></li>
+     ${optionsList.map((option)=>`
+     <li> <span>${option}</span></li>
      `).join('')}`
 
      selecctOption();
@@ -76,7 +72,7 @@ if(options.querySelector('.selected')){
      let selectedAnswer = options.querySelector('.selected span ').textContent;
      // console.log(selectedAnswer)
      if(selectedAnswer == correctAnswer){
-          correctScore++;
+         
           _result.innerHTML=`<p> correct answer </p>`
      }
      else{
